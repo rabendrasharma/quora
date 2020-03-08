@@ -13,4 +13,6 @@ Things you may want to cover:
 
 * We can improve UI more as well.
 
+* If we will do any enhancement then firstly we will have to focus on TDD&BDD which I didn't follwed
+
 * ...
