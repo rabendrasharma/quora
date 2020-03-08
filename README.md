@@ -6,6 +6,7 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version 2.5.5
+* run rake db:seed
 
 * This is full enhanceable application and in place of redirect_to we can either use ajax request or any js framework like react js
 
