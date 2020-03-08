@@ -5,20 +5,12 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version 2.5.5
 
-* System dependencies
+* This is full enhanceable application and in place of redirect_to we can either use ajax request or any js framework like react js
 
-* Configuration
+* Default DB I have used sqlite3 but we can use Mysql or postgresql which will be best.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+* We can improve UI more as well.
 
 * ...
