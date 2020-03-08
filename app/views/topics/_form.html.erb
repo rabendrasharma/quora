@@ -1,0 +1,14 @@
+<h1>Follow Topics</h1>
+<%= form_tag topics_path do %>
+  <% @topics&@topics.each do |topic| %>
+    <div class="col-lg-3">
+      <input type="checkbox" name="topic[<%= topic.id %>]", value="1" <%= @user_topics.present? && @user_topics.key?(topic.id) ? "checked" : "" %> >
+        <span><%= topic.subject %></span>
+      </input>
+    </div>
+  <% end %>
+  <div class="col-lg-4"></div>
+  <div class="col-lg-7">
+    <%= submit_tag %>
+  </div>
+<% end %>

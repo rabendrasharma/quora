@@ -1,0 +1,32 @@
+<!-- /.col-lg-3 -->
+<div class="col-lg-7">
+  <div class="ui-block">
+    <% @questions&@questions.each do |question| %>
+      <article class="hentry post">
+        <div class="m-link">
+           <a href="#"  target="_blank">
+              <h4><%= question.question %></h4>
+           </a>
+           <small class="text-muted">Question Asked by <%= question.user.email %></small>
+        </div>
+        <div id="question-<%= question.id %>"><%= link_to "Post Answer", new_answer_path(question_id: question.id), remote: true, class: "btn btn-sm btn-light", style: "float: right;" %></div>
+        <% question.answers&question.answers.each do |answer| %>
+          <p><%= answer.answer %>
+            <small class="text-muted">Answer Posted by <%= answer.user.email %></small>
+          </p>
+          <div class="post-additional-info inline-items">
+             <p>
+              <% if answer.user_id != current_user.id %>
+                <% if Follow.where(followee_id: answer.user.id, follower_id: current_user.id).blank? %>
+                  <%= link_to "Follow User", follow_path(followee_id: answer.user.id), class: "btn btn-sm btn-light" %>
+                <% else %>
+                  <%= link_to "UnFollow User", unfollow_path(followee_id: answer.user.id), class: "btn btn-sm btn-light" %>
+                <% end %>
+              <% end %>
+             </p>
+          </div>
+        <% end %>
+      </article>
+    <% end %>
+  </div>
+</div>

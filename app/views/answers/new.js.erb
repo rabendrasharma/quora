@@ -1,0 +1,1 @@
+$("#question-<%= params[:question_id]%>").html("<%= j render(:partial => 'form', :locals => { :question_id => params[:question_id] }) %>")

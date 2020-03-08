@@ -1,0 +1,7 @@
+<h1>Create Question</h1>
+<%= form_tag questions_path do %>
+  <%= label_tag :topic_id, "Topic" %>
+  <%= select_tag :topic_id, options_for_select(@topics.map{|topic| [topic.subject, topic.id ]}) %>
+  <%= text_area_tag :question %>
+  <%= submit_tag %>
+<% end %>

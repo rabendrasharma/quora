@@ -1,0 +1,11 @@
+<% if @topics.present? %>
+  <ul>
+    <% @topics.each do |topic| %>
+      <li>
+        <%= topic.subject %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  No data found.
+<% end %>

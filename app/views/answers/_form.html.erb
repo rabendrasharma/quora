@@ -1,0 +1,5 @@
+<%= form_tag answers_path do %>
+  <%= text_area_tag :answer %>
+  <%= hidden_field_tag :question_id, question_id %>
+  <%= submit_tag "Post" %>
+<% end %>

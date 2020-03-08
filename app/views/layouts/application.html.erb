@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quora</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse navbar-custom">
+      <div class="container-fluid d-inline-flex">
+        <%= link_to "My App", root_path, class: "navbar-brand justify-cotent-start" %>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <ul class="nav navbar-nav ml-auto" style="float: right">
+            <% if user_signed_in? %>
+              <li class="nav-item"><%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link") %></li>
+            <% else %>
+              <li class="nav-item"><%= link_to('Register', new_user_registration_path, class: "nav-link") %></li>
+              <li class="nav-item"><%= link_to('Login', new_user_session_path, class: "nav-link") %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <%= render :partial => "layouts/side_bar" if user_signed_in? %>
+        <%= yield %>
+      </div>
+    </div>
+
+<style type="text/css">
+  .navbar-custom {
+  border-radius: 0px;
+  z-index: 16;
+  box-shadow: 0 2px 3px 0 rgba(0,0,0, .4);
+}
+</style>
+  </body>
+</html>

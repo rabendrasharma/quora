@@ -1,0 +1,11 @@
+<% if @answers.present? %>
+  <ul>
+    <% @answers.each do |answer| %>
+      <li>
+        <%= answer.answer %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  No data found.
+<% end %>
